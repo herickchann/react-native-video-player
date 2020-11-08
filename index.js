@@ -343,14 +343,20 @@ export default class VideoPlayer extends Component {
     this.setState({
       isPlaying: false,
     });
-    this.showControls();
+    // this.showControls();
   }
 
   resume() {
     this.setState({
       isPlaying: true,
     });
-    this.showControls();
+    // this.showControls();
+  }
+
+  unmute() {
+    this.setState({
+      isMuted: false
+    });
   }
 
   renderStartButton() {
@@ -486,7 +492,7 @@ export default class VideoPlayer extends Component {
             customStyles.video,
           ]}
           ref={p => { this.player = p; }}
-          muted={this.props.muted || this.state.isMuted}
+          muted={this.state.isMuted || this.props.muted}
           paused={this.props.paused
             ? this.props.paused || !this.state.isPlaying
             : !this.state.isPlaying}
@@ -516,7 +522,7 @@ export default class VideoPlayer extends Component {
           />
         </View>
         {((!this.state.isPlaying) || this.state.isControlsVisible)
-          ? this.renderControls() : this.renderSeekBar(true)}
+          ? this.renderSeekBar(true) : this.renderSeekBar(true)}
       </View>
     );
   }
