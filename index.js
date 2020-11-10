@@ -390,48 +390,48 @@ export default class VideoPlayer extends Component {
   }
 
   renderSeekBar(fullWidth) {
-    const { customStyles, disableSeek } = this.props;
-    return (
-      <View
-        style={[
-          styles.seekBar,
-          fullWidth ? styles.seekBarFullWidth : {},
-          customStyles.seekBar,
-          fullWidth ? customStyles.seekBarFullWidth : {},
-        ]}
-        onLayout={this.onSeekBarLayout}
-      >
-        <View
-          style={[
-            { flexGrow: this.state.progress },
-            styles.seekBarProgress,
-            customStyles.seekBarProgress,
-          ]}
-        />
-        { !fullWidth && !disableSeek ? (
-          <View
-            style={[
-              styles.seekBarKnob,
-              customStyles.seekBarKnob,
-              this.state.isSeeking ? { transform: [{ scale: 1 }] } : {},
-              this.state.isSeeking ? customStyles.seekBarKnobSeeking : {},
-            ]}
-            hitSlop={{ top: 20, bottom: 20, left: 10, right: 20 }}
-            onStartShouldSetResponder={this.onSeekStartResponder}
-            onMoveShouldSetPanResponder={this.onSeekMoveResponder}
-            onResponderGrant={this.onSeekGrant}
-            onResponderMove={this.onSeek}
-            onResponderRelease={this.onSeekRelease}
-            onResponderTerminate={this.onSeekRelease}
-          />
-        ) : null }
-        <View style={[
-          styles.seekBarBackground,
-          { flexGrow: 1 - this.state.progress },
-          customStyles.seekBarBackground,
-        ]} />
-      </View>
-    );
+    // const { customStyles, disableSeek } = this.props;
+    // return (
+    //   <View
+    //     style={[
+    //       styles.seekBar,
+    //       fullWidth ? styles.seekBarFullWidth : {},
+    //       customStyles.seekBar,
+    //       fullWidth ? customStyles.seekBarFullWidth : {},
+    //     ]}
+    //     onLayout={this.onSeekBarLayout}
+    //   >
+    //     <View
+    //       style={[
+    //         { flexGrow: this.state.progress },
+    //         styles.seekBarProgress,
+    //         customStyles.seekBarProgress,
+    //       ]}
+    //     />
+    //     { !fullWidth && !disableSeek ? (
+    //       <View
+    //         style={[
+    //           styles.seekBarKnob,
+    //           customStyles.seekBarKnob,
+    //           this.state.isSeeking ? { transform: [{ scale: 1 }] } : {},
+    //           this.state.isSeeking ? customStyles.seekBarKnobSeeking : {},
+    //         ]}
+    //         hitSlop={{ top: 20, bottom: 20, left: 10, right: 20 }}
+    //         onStartShouldSetResponder={this.onSeekStartResponder}
+    //         onMoveShouldSetPanResponder={this.onSeekMoveResponder}
+    //         onResponderGrant={this.onSeekGrant}
+    //         onResponderMove={this.onSeek}
+    //         onResponderRelease={this.onSeekRelease}
+    //         onResponderTerminate={this.onSeekRelease}
+    //       />
+    //     ) : null }
+    //     <View style={[
+    //       styles.seekBarBackground,
+    //       { flexGrow: 1 - this.state.progress },
+    //       customStyles.seekBarBackground,
+    //     ]} />
+    //   </View>
+    // );
   }
 
   renderControls() {
